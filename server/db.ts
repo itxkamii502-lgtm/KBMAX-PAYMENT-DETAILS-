@@ -760,8 +760,8 @@ Thank you for choosing KB MAX!`,
           billing_period_start, billing_period_end, billing_cycle,
           total_sms, calculated_total, net_payable,
           payment_method_id, payment_method_name_snapshot, payment_details_snapshot,
-          payment_status, clearance_date, professional_slip, simple_slip, notes
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          payment_status, payment_date, clearance_date, professional_slip, simple_slip, notes
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           client2.id,
           panel.id,
@@ -777,6 +777,7 @@ Thank you for choosing KB MAX!`,
           'EasyPaisa',
           'EasyPaisa: 03219876543 (Title: M. Ali)',
           'Payment Pending',
+          null,
           '2026-09-02',
           pRecord2.professional,
           pRecord2.simple,
