@@ -1,0 +1,7 @@
+{
+  "name": "KB MAX SMS Client, Panel, Billing & WhatsApp Management System",
+  "description": "Professional, secure, responsive admin system for managing SMS clients, panels, country rates, weekly billing, payment slips, and WhatsApp notifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
