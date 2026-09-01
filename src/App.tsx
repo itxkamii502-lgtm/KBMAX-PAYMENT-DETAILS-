@@ -19,6 +19,7 @@ const MainApp: React.FC = () => {
   const { isAuthenticated, isLoading } = useAuth();
   const [activeTab, setActiveTab] = useState<ActiveTab>('dashboard');
   const [targetClientForRecord, setTargetClientForRecord] = useState<Client | null>(null);
+  const [targetClientForHistory, setTargetClientForHistory] = useState<Client | null>(null);
   const [refreshKey, setRefreshKey] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -42,6 +43,7 @@ const MainApp: React.FC = () => {
   };
 
   const handleViewClientHistory = (client: Client) => {
+    setTargetClientForHistory(client);
     setActiveTab('client_history');
   };
 
@@ -91,7 +93,10 @@ const MainApp: React.FC = () => {
         )}
 
         {activeTab === 'client_history' && (
-          <ClientHistoryView onAddRecordForClient={handleAddRecordForClient} />
+          <ClientHistoryView
+            initialClient={targetClientForHistory}
+            onAddRecordForClient={handleAddRecordForClient}
+          />
         )}
 
         {activeTab === 'whatsapp' && <WhatsAppView />}
