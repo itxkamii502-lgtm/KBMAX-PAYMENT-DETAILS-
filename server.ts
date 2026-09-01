@@ -9,7 +9,7 @@ async function startServer() {
   await initDatabase();
 
   const app = express();
-  const PORT = 3000;
+  const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
   // JSON and URL-encoded body parsers with generous limits for backups
   app.use(express.json({ limit: '50mb' }));
