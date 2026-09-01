@@ -2,9 +2,22 @@
 
 @layer base {
   html, body {
-    @apply antialiased bg-slate-950 text-slate-100;
+    @apply antialiased transition-colors duration-200;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+  }
+
+  html.theme-dark {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  html.theme-midnight {
+    background-color: #030712;
+    color: #f3f4f6;
+  }
+
+  html.theme-light {
+    @apply bg-slate-50 text-slate-900;
   }
 
   /* Smooth momentum scrolling for mobile */
@@ -35,5 +48,28 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(16, 185, 129, 0.6);
+}
+
+.theme-light ::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.8);
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.8);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
 }
 

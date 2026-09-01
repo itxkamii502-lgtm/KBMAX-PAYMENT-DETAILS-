@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { LoginView } from './components/auth/LoginView';
 import { Layout } from './components/layout/Layout';
 import { ActiveTab } from './components/layout/Sidebar';
@@ -103,11 +104,13 @@ const MainApp: React.FC = () => {
 
 export function App() {
   return (
-    <ToastProvider>
-      <AuthProvider>
-        <MainApp />
-      </AuthProvider>
-    </ToastProvider>
+    <ThemeProvider>
+      <ToastProvider>
+        <AuthProvider>
+          <MainApp />
+        </AuthProvider>
+      </ToastProvider>
+    </ThemeProvider>
   );
 }
 
